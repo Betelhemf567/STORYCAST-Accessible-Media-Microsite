@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StoryCast - An accessible media platform featuring audio and video storytelling for everyone">
+    <title>StoryCast - Accessible Media Storytelling</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" aria-label="StoryCast Home">
+                        <span class="logo-text">StoryCast</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" aria-current="page">Home</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html#accessibility">Accessibility</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Hero section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-title">Stories that speak. Voices that matter.</h1>
+                    <p class="hero-subtitle">
+                        Experience powerful storytelling through accessible audio and video content. 
+                        Every story, every voice, for everyone.
+                    </p>
+                    <a href="#stories" class="btn btn-primary">Explore Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured stories section -->
+        <section id="stories" class="featured-stories" aria-labelledby="featured-heading">
+            <div class="container">
+                <h2 id="featured-heading">Featured Stories</h2>
+                <p class="section-intro">Discover compelling narratives told through accessible media</p>
+                
+                <div class="stories-grid">
+                    <!-- Story card 1 -->
+                    <article class="story-card">
+                        <figure class="story-media">
+                            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=500&fit=crop" 
+                                 alt="Microphone in a recording studio with soft lighting">
+                            <figcaption class="visually-hidden">Podcast recording setup</figcaption>
+                        </figure>
+                        <div class="story-content">
+                            <h3>The Voice of Change</h3>
+                            <p>
+                                An inspiring podcast series featuring activists and change-makers 
+                                sharing their journeys toward social justice and equality.
+                            </p>
+                            <div class="story-meta">
+                                <span class="badge" aria-label="Content type">Audio</span>
+                                <span class="duration" aria-label="Duration">1:35 min</span>
+                            </div>
+                            <a href="story/story1.html" class="story-link" aria-label="Listen to The Voice of Change">
+                                Listen Now
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Story card 2 -->
+                    <article class="story-card">
+                        <figure class="story-media">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=500&fit=crop" 
+                                 alt="Film camera on set with professional lighting equipment">
+                            <figcaption class="visually-hidden">Documentary filmmaking</figcaption>
+                        </figure>
+                        <div class="story-content">
+                            <h3>Beyond the Lens</h3>
+                            <p>
+                                A visual documentary exploring the art of storytelling through 
+                                photography and cinematography, featuring diverse creators.
+                            </p>
+                            <div class="story-meta">
+                                <span class="badge" aria-label="Content type">Video</span>
+                                <span class="duration" aria-label="Duration">1:39 min</span>
+                            </div>
+                            <a href="story/story2.html" class="story-link" aria-label="Watch Beyond the Lens">
+                                Watch Now
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Story card 3 -->
+                    <article class="story-card">
+                        <figure class="story-media">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=500&fit=crop" 
+                                 alt="Audio mixing console with colorful sound level meters">
+                            <figcaption class="visually-hidden">Music production studio</figcaption>
+                        </figure>
+                        <div class="story-content">
+                            <h3>Sounds of Heritage</h3>
+                            <p>
+                                An immersive audio experience celebrating cultural music traditions 
+                                from around the world, preserving stories through sound.
+                            </p>
+                            <div class="story-meta">
+                                <span class="badge" aria-label="Content type">Audio</span>
+                                <span class="duration" aria-label="Duration">2:05 min</span>
+                            </div>
+                            <a href="story/story3.html" class="story-link" aria-label="Listen to Sounds of Heritage">
+                                Listen Now
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action section -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading">Join Our Storytelling Community</h2>
+                <p>Subscribe to receive new stories and updates on accessible content creation</p>
+                <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StoryCast</h3>
+                    <p>Making storytelling accessible to everyone, everywhere.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav aria-label="Footer navigation">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#stories">Stories</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="about.html#accessibility">Accessibility</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Accessibility</h3>
+                    <p>
+                        This site is designed to meet WCAG 2.1 AA standards. 
+                        All content includes captions, transcripts, and keyboard navigation support.
+                    </p>
+                    <a href="about.html#accessibility" class="footer-link">View Accessibility Statement</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 StoryCast. All rights reserved. | Committed to accessible storytelling.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

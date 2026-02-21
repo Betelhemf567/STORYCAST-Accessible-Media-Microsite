@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sounds of Heritage - An immersive audio experience celebrating cultural music traditions">
+    <title>Sounds of Heritage - StoryCast</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html" aria-label="StoryCast Home">
+                        <span class="logo-text">StoryCast</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#stories">Stories</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../about.html#accessibility">Accessibility</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Story header -->
+        <section class="story-header">
+            <div class="container">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#stories">Stories</a></li>
+                        <li aria-current="page">Sounds of Heritage</li>
+                    </ol>
+                </nav>
+                
+                <h1>Sounds of Heritage</h1>
+                <p class="story-subtitle">
+                    An immersive audio experience celebrating cultural music traditions from around 
+                    the world, preserving stories through sound and rhythm.
+                </p>
+                
+                <div class="story-metadata">
+                    <span class="badge">Audio Story</span>
+                    <span class="metadata-item">
+                        <strong>Duration:</strong> 2:05 minutes
+                    </span>
+                    <span class="metadata-item">
+                        <strong>Released:</strong> March 2025
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media player section -->
+        <section class="media-player-section" aria-labelledby="player-heading">
+            <div class="container">
+                <h2 id="player-heading">Story Media Player</h2>
+                
+                <!-- Video Player with captions support -->
+                <figure class="media-player-wrapper">
+                    <video 
+                        id="story-video"
+                        controls 
+                        preload="metadata"
+                        aria-label="Sounds of Heritage video with audio visualizations"
+                        poster="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&h=675&fit=crop">
+                        
+                        <source src="../assets/video-sounds-heritage.mp4" type="video/mp4">
+                        
+                        <!-- Caption tracks -->
+                        <track 
+                            kind="captions" 
+                            src="../assets/captions-sounds-heritage-en.vtt" 
+                            srclang="en" 
+                            label="English Captions"
+                            default>
+                        
+                        <track 
+                            kind="descriptions" 
+                            src="../assets/descriptions-sounds-heritage-en.vtt" 
+                            srclang="en" 
+                            label="Audio Descriptions">
+                        
+                        <!-- Fallback text -->
+                        <p>
+                            Your browser doesn't support HTML5 video. 
+                            <a href="../assets/video-sounds-heritage.mp4" download>Download the video file</a> or 
+                            <a href="#transcript">read the transcript below</a>.
+                        </p>
+                    </video>
+                    
+                    <figcaption>
+                        Video player with full caption support and keyboard controls. 
+                        Use spacebar to play/pause, arrow keys to seek.
+                    </figcaption>
+                </figure>
+
+                <!-- Audio Player (primary format) -->
+                <div class="audio-player-wrapper">
+                    <h3>Audio-Only Version (Recommended)</h3>
+                    <p>For the best experience, listen to this audio-focused story:</p>
+                    
+                    <figure class="audio-player">
+                        <audio 
+                            id="story-audio"
+                            controls 
+                            preload="metadata"
+                            aria-label="Sounds of Heritage audio experience">
+                            
+                            <source src="../assets/audio-sounds-heritage.mp4" type="audio/mpeg">
+                            <source src="../assets/audio-sounds-heritage.ogg" type="audio/ogg">
+                            
+                            <p>
+                                Your browser doesn't support HTML5 audio. 
+                                <a href="../assets/audio-sounds-heritage.mp4" download>Download the audio file</a> or 
+                                <a href="#transcript">read the transcript below</a>.
+                            </p>
+                        </audio>
+                        <figcaption>Pure audio version with musical performances</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story description -->
+        <section class="story-description" aria-labelledby="description-heading">
+            <div class="container">
+                <h2 id="description-heading">About This Story</h2>
+                
+                <div class="description-content">
+                    <p>
+                        <strong>Sounds of Heritage</strong> is a sonic journey through the musical traditions 
+                        that have shaped cultures across continents. This immersive audio documentary explores 
+                        how music serves as a vessel for history, identity, and cultural continuity.
+                    </p>
+                    
+                    <p>
+                        From the rhythmic drumming of West African djembe circles to the haunting melodies of 
+                        Irish sean-nós singing, from the complex polyrhythms of Indian classical music to the 
+                        soulful blues of the American South—each tradition carries centuries of stories, 
+                        struggles, and celebrations. Through field recordings and intimate conversations with 
+                        musicians and cultural practitioners, we discover how these musical forms have adapted 
+                        and persisted through time.
+                    </p>
+                    
+                    <p>
+                        This episode features master musicians who are not just performers but custodians of 
+                        intangible cultural heritage. They share insights into the spiritual, social, and 
+                        historical contexts of their music, revealing how traditional sounds continue to 
+                        resonate in our modern world. The program includes live performances, archival recordings, 
+                        and stories that illuminate the profound connection between music, memory, and identity.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transcript section -->
+        <section id="transcript" class="transcript-section" aria-labelledby="transcript-heading">
+            <div class="container">
+                <h2 id="transcript-heading">Full Transcript</h2>
+                
+                <div class="transcript-content">
+                    <p class="transcript-intro">
+                        <em>Complete written transcript of "Sounds of Heritage" audio documentary</em>
+                    </p>
+                    
+                    <div class="transcript-text">
+                        <p><strong>[00:00]</strong> <em>[Sounds of various traditional instruments blending together]</em></p>
+                        
+                        <p><strong>[00:15]</strong> <strong>Narrator:</strong> Music is humanity's universal language, yet every culture speaks it with a distinct accent. Welcome to Sounds of Heritage.</p>
+                        
+                        <p><strong>[00:30]</strong> <strong>Kofi Mensah (Master Djembe Drummer, Ghana):</strong> The djembe is not just an instrument—it is the voice of our ancestors. Each rhythm tells a story. The drum speaks of celebration, of warning, of mourning, of joy. When I play, I am not alone. Generations play with me.</p>
+                        
+                        <p><strong>[01:00]</strong> <em>[Traditional West African drumming performance]</em></p>
+                        
+                        <p><strong>[01:45]</strong> <strong>Narrator:</strong> Kofi learned the djembe from his grandfather, who learned from his grandfather before him. This unbroken chain of musical transmission stretches back hundreds of years.</p>
+                        
+                        <p><strong>[02:05]</strong> <strong>Siobhan O'Connor (Sean-nós Singer, Ireland):</strong> Sean-nós means "old style" in Irish. This singing tradition goes back to a time before written music, before recordings. Each singer adds their own ornamentation, their own soul to the melody. No two performances are ever the same.</p>
+                        
+                        <p><strong>[02:35]</strong> <em>[Haunting Irish sean-nós vocal performance]</em></p>
+                        
+                        <p><strong>[03:15]</strong> <strong>Narrator:</strong> These unaccompanied songs, sung in the Irish language, preserve not just melodies but an entire worldview—a connection to land, language, and history.</p>
+                        
+                        <p><strong>[03:40]</strong> <strong>Ravi Shankar Kumar (Sitar Master, India):</strong> In Indian classical music, we say that the notes are like colors on a painter's palette. The ragas—our melodic frameworks—they are not just scales. Each raga has a time of day, a season, an emotion. When played properly, a raga can move the listener through an entire journey of feeling.</p>
+                        
+                        <p><strong>[04:15]</strong> <em>[Sitar performance demonstrating a morning raga]</em></p>
+                        
+                        <p><strong>[05:00]</strong> <strong>Narrator:</strong> As globalization accelerates, these traditional music forms face both challenges and opportunities. How do ancient sounds survive in a modern world?</p>
+                        
+                        <p><strong>[05:20]</strong> <strong>Kofi Mensah:</strong> Young people must learn, but they must also adapt. The tradition lives when it breathes, when it grows. We honor the past by bringing it into the present.</p>
+                        
+                        <p><strong>[05:45]</strong> <strong>Narrator:</strong> Through music, we preserve more than melodies. We preserve wisdom, history, and the diverse ways humanity has chosen to express the inexpressible.</p>
+                                         
+                        <p class="transcript-note">
+                            <strong>Note:</strong> This is an abbreviated transcript for demonstration purposes. 
+                            The full 32-minute program includes extended musical performances and additional cultural context.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="transcript-download">
+                    <a href="../assets/transcript-sounds-heritage.txt" download class="btn btn-secondary" aria-label="Download complete transcript as text file">
+                        Download Full Transcript
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related stories -->
+        <section class="related-stories" aria-labelledby="related-heading">
+            <div class="container">
+                <h2 id="related-heading">Related Stories</h2>
+                
+                <div class="stories-grid">
+                    <article class="story-card">
+                        <figure class="story-media">
+                            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=500&fit=crop" 
+                                 alt="Microphone in recording studio">
+                        </figure>
+                        <div class="story-content">
+                            <h3>The Voice of Change</h3>
+                            <p>An inspiring podcast series featuring activists and change-makers sharing their journeys.</p>
+                            <div class="story-meta">
+                                <span class="badge">Audio</span>
+                                <span class="duration">1:35 min</span>
+                            </div>
+                            <a href="story1.html" class="story-link">Listen Now <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="story-card">
+                        <figure class="story-media">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=500&fit=crop" 
+                                 alt="Film camera on set">
+                        </figure>
+                        <div class="story-content">
+                            <h3>Beyond the Lens</h3>
+                            <p>A visual documentary exploring storytelling through photography and cinematography.</p>
+                            <div class="story-meta">
+                                <span class="badge">Video</span>
+                                <span class="duration">1:39 min</span>
+                            </div>
+                            <a href="story2.html" class="story-link">Watch Now <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StoryCast</h3>
+                    <p>Making storytelling accessible to everyone, everywhere.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav aria-label="Footer navigation">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../index.html#stories">Stories</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../about.html#accessibility">Accessibility</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Accessibility</h3>
+                    <p>
+                        This site is designed to meet WCAG 2.1 AA standards. 
+                        All content includes captions, transcripts, and keyboard navigation support.
+                    </p>
+                    <a href="../about.html#accessibility" class="footer-link">View Accessibility Statement</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 StoryCast. All rights reserved. | Committed to accessible storytelling.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

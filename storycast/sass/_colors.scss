@@ -1,0 +1,55 @@
+// _colors.scss
+// Color palette for StoryCast - WCAG AA compliant
+
+// Primary colors
+$color-primary: #4f46e5;        // Indigo
+$color-primary-dark: #4338ca;   // Darker indigo for hover states
+$color-primary-light: #6366f1;  // Lighter indigo
+
+$color-secondary: #06b6d4;      // Cyan
+$color-secondary-dark: #0891b2; // Darker cyan
+$color-secondary-light: #22d3ee; // Lighter cyan
+
+// Neutral colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-dark: #111827;           // Dark gray - almost black
+$color-gray-900: #1f2937;
+$color-gray-800: #374151;
+$color-gray-700: #4b5563;
+$color-gray-600: #6b7280;
+$color-gray-500: #9ca3af;
+$color-gray-400: #d1d5db;
+$color-gray-300: #e5e7eb;
+$color-gray-200: #f3f4f6;       // Light gray background
+$color-gray-100: #f9fafb;
+
+// Semantic colors
+$color-success: #10b981;
+$color-warning: #f59e0b;
+$color-error: #ef4444;
+$color-info: #3b82f6;
+
+// Background colors
+$color-bg-primary: $color-white;
+$color-bg-secondary: $color-gray-200;
+$color-bg-dark: $color-dark;
+
+// Text colors
+$color-text-primary: $color-dark;
+$color-text-secondary: $color-gray-700;
+$color-text-muted: $color-gray-600;
+$color-text-inverse: $color-white;
+
+// Border colors
+$color-border-light: $color-gray-300;
+$color-border-medium: $color-gray-400;
+$color-border-dark: $color-gray-600;
+
+// Focus state (for accessibility)
+$color-focus: $color-primary;
+$color-focus-ring: rgba($color-primary, 0.5);
+
+// Overlay colors
+$color-overlay: rgba($color-black, 0.5);
+$color-overlay-light: rgba($color-black, 0.3);

@@ -1,0 +1,68 @@
+// _spacing.scss
+// Spacing system for StoryCast - using 8px base unit
+
+// Base spacing unit
+$spacing-unit: 0.5rem; // 8px
+
+// Spacing scale
+$spacing-0: 0;
+$spacing-1: $spacing-unit * 0.5;  // 4px
+$spacing-2: $spacing-unit;        // 8px
+$spacing-3: $spacing-unit * 1.5;  // 12px
+$spacing-4: $spacing-unit * 2;    // 16px
+$spacing-5: $spacing-unit * 2.5;  // 20px
+$spacing-6: $spacing-unit * 3;    // 24px
+$spacing-7: $spacing-unit * 3.5;  // 28px
+$spacing-8: $spacing-unit * 4;    // 32px
+$spacing-10: $spacing-unit * 5;   // 40px
+$spacing-12: $spacing-unit * 6;   // 48px
+$spacing-14: $spacing-unit * 7;   // 56px
+$spacing-16: $spacing-unit * 8;   // 64px
+$spacing-20: $spacing-unit * 10;  // 80px
+$spacing-24: $spacing-unit * 12;  // 96px
+$spacing-32: $spacing-unit * 16;  // 128px
+
+// Semantic spacing
+$spacing-section: $spacing-16;    // Space between sections
+$spacing-section-lg: $spacing-24; // Large section spacing
+$spacing-content: $spacing-6;     // Space between content elements
+$spacing-element: $spacing-4;     // Space between small elements
+
+// Container widths
+$container-sm: 640px;
+$container-md: 768px;
+$container-lg: 1024px;
+$container-xl: 1280px;
+$container-2xl: 1536px;
+
+// Container padding
+$container-padding: $spacing-4;
+$container-padding-lg: $spacing-6;
+
+// Border radius
+$radius-none: 0;
+$radius-sm: 0.25rem;   // 4px
+$radius-md: 0.375rem;  // 6px
+$radius-lg: 0.5rem;    // 8px
+$radius-xl: 0.75rem;   // 12px
+$radius-2xl: 1rem;     // 16px
+$radius-full: 9999px;  // Pill shape
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+// Focus ring
+$focus-ring-width: 3px;
+$focus-ring-offset: 2px;
+
+// Transitions
+$transition-fast: 150ms;
+$transition-base: 250ms;
+$transition-slow: 350ms;
+$transition-slower: 500ms;
+
+$transition-timing: ease-in-out;

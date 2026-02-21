@@ -1,0 +1,693 @@
+// _components.scss
+// Component styles for StoryCast
+
+@import 'colors';
+@import 'spacing';
+@import 'typography';
+
+// ===========================
+// HEADER & NAVIGATION
+// ===========================
+
+.site-header {
+  background: $color-white;
+  border-bottom: 1px solid $color-border-light;
+  padding: $spacing-4 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: $shadow-sm;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  .logo-text {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+    
+    &:focus {
+      outline: $focus-ring-width solid $color-focus;
+      outline-offset: $focus-ring-offset;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+.main-nav {
+  .nav-list {
+    display: flex;
+    gap: $spacing-6;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $color-text-primary;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $radius-md;
+    transition: all $transition-fast $transition-timing;
+
+    &:hover {
+      color: $color-primary;
+      background: $color-gray-100;
+    }
+
+    &:focus {
+      outline: $focus-ring-width solid $color-focus;
+      outline-offset: $focus-ring-offset;
+    }
+
+    &[aria-current="page"] {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+// ===========================
+// BUTTONS
+// ===========================
+
+.btn {
+  display: inline-block;
+  padding: $spacing-3 $spacing-6;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $radius-lg;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-base $transition-timing;
+
+  &:focus {
+    outline: $focus-ring-width solid $color-focus;
+    outline-offset: $focus-ring-offset;
+  }
+}
+
+.btn-primary {
+  background: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background: $color-primary-dark;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: $color-secondary;
+  color: $color-white;
+
+  &:hover {
+    background: $color-secondary-dark;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ===========================
+// HERO SECTION
+// ===========================
+
+.hero {
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  color: $color-white;
+  padding: $spacing-20 0;
+  text-align: center;
+
+  @include lg {
+    padding: $spacing-32 0;
+  }
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: $h1-size-mobile;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-6;
+    line-height: $line-height-tight;
+
+    @include lg {
+      font-size: $h1-size;
+    }
+  }
+}
+
+.hero-subtitle {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-8;
+  opacity: 0.95;
+
+  @include lg {
+    font-size: $font-size-xl;
+  }
+}
+
+// ===========================
+// STORY CARDS WITH CONTAINER QUERY
+// ===========================
+
+// Story card with container query support
+.story-card {
+  background: $color-white;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base $transition-timing;
+  display: flex;
+  flex-direction: column;
+  container-type: inline-size;
+  container-name: story-card;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl;
+  }
+
+  &:focus-within {
+    outline: $focus-ring-width solid $color-focus;
+    outline-offset: $focus-ring-offset;
+  }
+}
+
+.story-media {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform $transition-slow $transition-timing;
+  }
+
+  .story-card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.story-content {
+  padding: $spacing-6;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-3;
+  }
+
+  p {
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-4;
+    flex: 1;
+  }
+}
+
+// Container query: change layout when card is wide
+@container story-card (min-width: 500px) {
+  .story-card {
+    flex-direction: row;
+  }
+
+  .story-media {
+    width: 40%;
+    flex-shrink: 0;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .story-content {
+    width: 60%;
+  }
+}
+
+.story-meta {
+  display: flex;
+  gap: $spacing-3;
+  align-items: center;
+  margin-bottom: $spacing-4;
+}
+
+.badge {
+  display: inline-block;
+  padding: $spacing-1 $spacing-3;
+  background: $color-primary;
+  color: $color-white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-full;
+}
+
+.duration {
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}
+
+.story-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  color: $color-primary;
+  text-decoration: none;
+  font-weight: $font-weight-semibold;
+  transition: gap $transition-fast $transition-timing;
+
+  &:hover {
+    gap: $spacing-3;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $focus-ring-width solid $color-focus;
+    outline-offset: $focus-ring-offset;
+    border-radius: $radius-sm;
+  }
+}
+
+// ===========================
+// MEDIA PLAYERS
+// ===========================
+
+.media-player-wrapper,
+.audio-player-wrapper {
+  margin: $spacing-8 0;
+}
+
+.media-player-wrapper {
+  video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-xl;
+    background: $color-black;
+  }
+
+  figcaption {
+    margin-top: $spacing-4;
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    text-align: center;
+  }
+}
+
+.audio-player {
+  audio {
+    width: 100%;
+    margin-top: $spacing-3;
+  }
+
+  figcaption {
+    margin-top: $spacing-2;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+  }
+}
+
+// ===========================
+// BREADCRUMB
+// ===========================
+
+.breadcrumb {
+  display: flex;
+  gap: $spacing-2;
+  list-style: none;
+  padding: 0;
+  margin-bottom: $spacing-6;
+  font-size: $font-size-sm;
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: $spacing-2;
+      color: $color-text-muted;
+    }
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: $focus-ring-width solid $color-focus;
+      outline-offset: $focus-ring-offset;
+      border-radius: $radius-sm;
+    }
+  }
+
+  [aria-current="page"] {
+    color: $color-text-primary;
+  }
+}
+
+// ===========================
+// TRANSCRIPT
+// ===========================
+
+.transcript-section {
+  background: $color-gray-100;
+}
+
+.transcript-content {
+  background: $color-white;
+  padding: $spacing-8;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+}
+
+.transcript-intro {
+  margin-bottom: $spacing-6;
+  padding-bottom: $spacing-4;
+  border-bottom: 2px solid $color-border-light;
+}
+
+.transcript-text {
+  p {
+    margin-bottom: $spacing-4;
+    line-height: $line-height-relaxed;
+  }
+
+  strong {
+    color: $color-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.transcript-note {
+  margin-top: $spacing-8;
+  padding: $spacing-4;
+  background: $color-gray-100;
+  border-left: 4px solid $color-primary;
+  border-radius: $radius-md;
+}
+
+.transcript-download {
+  margin-top: $spacing-6;
+  text-align: center;
+}
+
+// ===========================
+// VALUE CARDS
+// ===========================
+
+.value-card {
+  background: $color-white;
+  padding: $spacing-6;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  transition: all $transition-base $transition-timing;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    color: $color-primary;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-3;
+  }
+
+  p {
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// ===========================
+// ACCESSIBILITY FEATURES
+// ===========================
+
+.accessibility-features {
+  display: grid;
+  gap: $spacing-6;
+  margin: $spacing-8 0;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-item {
+  background: $color-white;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  border: 2px solid $color-border-light;
+
+  h4 {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    color: $color-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-3;
+  }
+
+  p {
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+}
+
+.feature-icon {
+  font-size: $font-size-2xl;
+}
+
+// ===========================
+// CTA SECTION
+// ===========================
+
+.cta-section {
+  background: $color-gray-100;
+  text-align: center;
+  padding: $spacing-20 0;
+
+  h2 {
+    font-size: $h2-size-mobile;
+    margin-bottom: $spacing-4;
+
+    @include lg {
+      font-size: $h2-size;
+    }
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-6;
+  }
+}
+
+// ===========================
+// FOOTER
+// ===========================
+
+.site-footer {
+  background: $color-dark;
+  color: $color-white;
+  padding: $spacing-16 0 $spacing-8;
+}
+
+.footer-content {
+  display: grid;
+  gap: $spacing-8;
+  margin-bottom: $spacing-8;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-section {
+  h3 {
+    color: $color-white;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-4;
+  }
+
+  p {
+    color: $color-gray-400;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-3;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: $spacing-2;
+  }
+
+  a {
+    color: $color-gray-400;
+    text-decoration: none;
+    transition: color $transition-fast $transition-timing;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &:focus {
+      outline: $focus-ring-width solid $color-focus;
+      outline-offset: $focus-ring-offset;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+.footer-link {
+  color: $color-secondary !important;
+  font-weight: $font-weight-semibold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-bottom {
+  padding-top: $spacing-8;
+  border-top: 1px solid $color-gray-700;
+  text-align: center;
+  color: $color-gray-500;
+  font-size: $font-size-sm;
+}
+
+// ===========================
+// UTILITY CLASSES
+// ===========================
+
+.lead-text {
+  font-size: $font-size-xl;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+
+  @include lg {
+    font-size: $font-size-2xl;
+  }
+}
+
+.section-intro {
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  text-align: center;
+  margin-bottom: $spacing-8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding-left: $spacing-6;
+    position: relative;
+    margin-bottom: $spacing-3;
+    line-height: $line-height-relaxed;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $color-primary;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.emphasis {
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  padding: $spacing-4;
+  background: $color-gray-100;
+  border-left: 4px solid $color-primary;
+  border-radius: $radius-md;
+}
+
+.standards-list,
+.testing-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: $spacing-3;
+    background: $color-white;
+    margin-bottom: $spacing-2;
+    border-radius: $radius-md;
+    border-left: 3px solid $color-primary;
+  }
+}
+
+.contact-info {
+  background: $color-white;
+  padding: $spacing-4;
+  border-radius: $radius-lg;
+  border: 2px solid $color-border-light;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: $focus-ring-width solid $color-focus;
+      outline-offset: $focus-ring-offset;
+      border-radius: $radius-sm;
+    }
+  }
+}

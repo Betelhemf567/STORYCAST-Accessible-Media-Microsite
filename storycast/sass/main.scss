@@ -1,0 +1,215 @@
+// main.scss
+// Main Sass file for StoryCast - imports all partials
+
+// Import variables and tokens first
+@import 'colors';
+@import 'typography';
+@import 'spacing';
+
+// Import layout and components
+@import 'layout';
+@import 'components';
+
+// ===========================
+// GLOBAL STYLES
+// ===========================
+
+// CSS Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  background: $color-bg-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  margin-bottom: $spacing-4;
+}
+
+h1 {
+  font-size: $h1-size-mobile;
+
+  @include lg {
+    font-size: $h1-size;
+  }
+}
+
+h2 {
+  font-size: $h2-size-mobile;
+
+  @include lg {
+    font-size: $h2-size;
+  }
+}
+
+h3 {
+  font-size: $h3-size-mobile;
+
+  @include lg {
+    font-size: $h3-size;
+  }
+}
+
+h4 {
+  font-size: $h4-size-mobile;
+
+  @include lg {
+    font-size: $h4-size;
+  }
+}
+
+h5 {
+  font-size: $h5-size-mobile;
+
+  @include lg {
+    font-size: $h5-size;
+  }
+}
+
+h6 {
+  font-size: $h6-size-mobile;
+
+  @include lg {
+    font-size: $h6-size;
+  }
+}
+
+p {
+  margin-bottom: $spacing-4;
+}
+
+a {
+  color: $color-primary;
+  transition: color $transition-fast $transition-timing;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+// Focus styles for accessibility
+:focus-visible {
+  outline: $focus-ring-width solid $color-focus;
+  outline-offset: $focus-ring-offset;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Lists
+ul, ol {
+  margin-bottom: $spacing-4;
+  padding-left: $spacing-6;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-4;
+}
+
+// Forms
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Media elements accessibility
+video,
+audio {
+  &:focus {
+    outline: $focus-ring-width solid $color-focus;
+    outline-offset: $focus-ring-offset;
+  }
+}
+
+// Print styles
+@media print {
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .btn {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+  }
+
+  h3 {
+    font-size: 16pt;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+  }
+}
+
+// Reduced motion support (accessibility)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  .story-card {
+    border: 2px solid $color-border-dark;
+  }
+}
+
+// Dark mode support (optional enhancement)
+@media (prefers-color-scheme: dark) {
+  // You can add dark mode styles here if desired
+  // For now, keeping light theme as primary
+}
